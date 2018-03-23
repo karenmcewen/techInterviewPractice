@@ -15,9 +15,11 @@ namespace TechInterviewQs
             int menuChoice = 10;
             while (menuChoice > 0)
             {
-                Console.WriteLine("1 - FizzBuzz");
-                Console.WriteLine("2 - Reverse a string");
-                Console.WriteLine("3 - Prime Numbers");
+                Console.WriteLine("1 - FizzBuzz any number");
+                Console.WriteLine("2 - FizzBuzz x to y");
+                Console.WriteLine("3 - Reverse any string");
+                Console.WriteLine("4 - Prime Numbers x to y");
+                Console.WriteLine("5 - Palindrome any string");
                 Console.WriteLine("0 - Exit");
 
                 Console.WriteLine("Which program would you like to run?");
@@ -29,16 +31,23 @@ namespace TechInterviewQs
                         break;
 
                     case 1:
-                        FizzBuzz();
+                        FizzBuzzNumber();
                         break;
 
                     case 2:
-                        ReverseTheString();
+                        FizzBuzzXtoY();
                         break;
 
                     case 3:
+                        ReverseTheString();
                         break;
 
+                    case 4:
+                        break;
+
+                    case 5:
+                        IsItAPalindrome();
+                        break;
                     default:
                         menuChoice = 10;
                         break;
@@ -123,10 +132,10 @@ namespace TechInterviewQs
 
         ///////////////////////////////////////////END OF MAIN ///////////////////////////////////////
 
-        //Method FizzBuzz
+        //Method FizzBuzzNumber
         //Write an application that asks the user for an integer.
         //If the number is divisible by 3 "fizz". by 5 "buzz"; by both "fizzbuzz"
-        public static void FizzBuzz()
+        public static void FizzBuzzNumber()
         {
 
             Console.WriteLine("Please enter an integer");
@@ -151,7 +160,49 @@ namespace TechInterviewQs
                 Console.WriteLine("Sorry, not divisible by 3 or 5 - better luck next time!");
             }
         }
+        //////////////////////////////////////////////////////////////////////////////////////
+        //Method FizzBuzzXtoY()
+        public static void FizzBuzzXtoY()
+        {
+            //bool endGreaterThanStart = false;
+            int startNum;
+            int endNum;
+            
+            //while (endGreaterThanStart == false)
+            //{
+                Console.WriteLine("Please enter a starting number");
+                startNum = int.Parse(Console.ReadLine());
+                Console.WriteLine("Please enter an ending number");
+                endNum = int.Parse(Console.ReadLine());
+            //    if (endNum <= startNum)
+            //    { Console.WriteLine("Ending number must be greater than starting number. Please try again."); }
+            //    else
+            //    { endGreaterThanStart = true;                
+            //    }
+            //}//end while loop that checks for usable starting and ending numbers
+            
+            for (int i = startNum; i<= endNum; i++)
+            {
+                if (i % 5 == 0 && i % 3 == 0)
+                {
+                    Console.WriteLine("FIZZBUZZ");
+                }
+                else if (i % 3 == 0)
+                {
+                    Console.WriteLine("FIZZ");
 
+                }
+                else if (i % 5 == 0)
+                {
+                    Console.WriteLine("BUZZ");
+                }
+
+                else
+                {
+                    Console.WriteLine(i);
+                }
+            }
+        }
         //////////////////////////////////////////////////////////////////////////////////////
         //creating a method to reverse a string (9/13-2)
         public static void ReverseTheString()
@@ -186,7 +237,10 @@ namespace TechInterviewQs
         }
 
         //////////////////////////////////////////////////////////////////////////////////////
+        public static void IsItAPalindrome()
+        {
 
+        }
         ///////////////////////////////////do not erase curly brackets below this /////////////
     }
 }
