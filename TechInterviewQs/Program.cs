@@ -15,6 +15,7 @@ namespace TechInterviewQs
             int menuChoice = 10;
             while (menuChoice > 0)
             {
+                Console.WriteLine("\n\n-----------MENU------------");
                 Console.WriteLine("1 - FizzBuzz any number");
                 Console.WriteLine("2 - FizzBuzz x to y");
                 Console.WriteLine("3 - Reverse any string");
@@ -24,7 +25,7 @@ namespace TechInterviewQs
 
                 Console.WriteLine("Which program would you like to run?");
                 menuChoice = int.Parse(Console.ReadLine());
-
+                Console.WriteLine("\n\n");
                 switch (menuChoice)
                 {
                     case 0:
@@ -164,22 +165,22 @@ namespace TechInterviewQs
         //Method FizzBuzzXtoY()
         public static void FizzBuzzXtoY()
         {
-            //bool endGreaterThanStart = false;
-            int startNum;
-            int endNum;
-            
-            //while (endGreaterThanStart == false)
-            //{
-                Console.WriteLine("Please enter a starting number");
+            bool endGreaterThanStart = false;
+            int startNum=0;
+            int endNum=100;
+
+            while (endGreaterThanStart == false)
+            {
+            Console.WriteLine("Please enter a starting number");
                 startNum = int.Parse(Console.ReadLine());
                 Console.WriteLine("Please enter an ending number");
                 endNum = int.Parse(Console.ReadLine());
-            //    if (endNum <= startNum)
-            //    { Console.WriteLine("Ending number must be greater than starting number. Please try again."); }
-            //    else
-            //    { endGreaterThanStart = true;                
-            //    }
-            //}//end while loop that checks for usable starting and ending numbers
+             if (endNum <= startNum)
+            { Console.WriteLine("Ending number must be greater than starting number. Please try again."); }
+            else
+             { endGreaterThanStart = true;                
+            }
+           }//end while loop that checks for usable starting and ending numbers
             
             for (int i = startNum; i<= endNum; i++)
             {
