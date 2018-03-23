@@ -20,7 +20,8 @@ namespace TechInterviewQs
                 Console.WriteLine("2 - FizzBuzz x to y");
                 Console.WriteLine("3 - Reverse any string");
                 Console.WriteLine("4 - Prime Numbers x to y");
-                Console.WriteLine("5 - Palindrome any string");
+                Console.WriteLine("5 - Largest Number in array");
+                Console.WriteLine("6 - Palindrome any string");
                 Console.WriteLine("0 - Exit");
 
                 Console.WriteLine("Which program would you like to run?");
@@ -30,23 +31,22 @@ namespace TechInterviewQs
                 {
                     case 0:
                         break;
-
                     case 1:
                         FizzBuzzNumber();
                         break;
-
                     case 2:
                         FizzBuzzXtoY();
                         break;
-
                     case 3:
                         ReverseTheString();
                         break;
-
                     case 4:
+                        PrimeNumbersXtoY();
                         break;
-
                     case 5:
+                        LargestNumInArray();
+                        break;
+                    case 6:
                         IsItAPalindrome();
                         break;
                     default:
@@ -57,79 +57,6 @@ namespace TechInterviewQs
 
             }
         }
-
-
-
-
-
-        //////////////////////////////////////////////////////////////////////////////////
-
-        //Tech interview question
-        //what is the difference between an Array and a List?
-
-        //////////////////////////////////////////////////////////////////////////////////
-        //Tech interview question
-        //difference between reference types and value types
-        //stacks vs heaps
-        //reference types are pointers to data located on the heap
-        //C# does the garbage collection for us - other languauges you have to reallocate space
-
-
-        //////////////////////////////////////////////////////////////////////////////////
-        //Tech interview question
-        //stringbuilder - how does it work?
-
-        //////////////////////////////////////////////////////////////////////////////////
-        //Tech interview question (9/12)
-        //print out all prime numbers that are less than 100 to the console ***THIS DIDN'T WORK
-        //0 and 1 are not prime numbers
-        //{
-        //    int beginNumber = 2;
-        //    int endNumber = 100;
-        //    Console.WriteLine("What number would you like to start with?");
-        //    beginNumber = int.Parse(Console.ReadLine());
-        //    Console.WriteLine("What number would you like to end with?");
-        //    endNumber = int.Parse(Console.ReadLine());
-
-        //    List<int> primeNums = new List<int>() { 2, 3, 5, 7 }; //initial 
-        //    bool isPrime = true;
-
-
-        //    for (int i = beginNumber; i < endNumber; i++) //outer loop
-        //    {
-        //        for (int j = 2; j < i; j++) //inner loop
-        //        {
-        //            if (i!j && i % j == 0)    
-        //    } } }
-        //        { isPrime = false;
-        //        break;
-        //    }
-        //}
-
-        //    }
-
-        //    if (isPrime)
-        //    {
-        //        Console.WriteLine(i);
-        //    }
-        //    isPrime = true;
-
-        //    }
-
-        //}
-
-
-        //////////////////////////////////////////////////////////////////////////////////
-        //Tech interview question 9/13-1
-        //Create a method that takes one int Array
-        //the method should return the largest # in that array
-
-
-        //int[] numArray = {10101, 3, 7, 98, 123, 4, 67, 34, 8787, 33, -9000 };
-        //int maxNumber = LargestNum(numArray);
-        //Console.WriteLine("The largest number in the array is " + maxNumber);
-
-
 
         ///////////////////////////////////////////END OF MAIN ///////////////////////////////////////
 
@@ -161,7 +88,7 @@ namespace TechInterviewQs
                 Console.WriteLine("Sorry, not divisible by 3 or 5 - better luck next time!");
             }
         }
-        //////////////////////////////////////////////////////////////////////////////////////
+        //-------------------------------------------------------------------------------------------
         //Method FizzBuzzXtoY()
         public static void FizzBuzzXtoY()
         {
@@ -191,57 +118,100 @@ namespace TechInterviewQs
                 else if (i % 3 == 0)
                 {
                     Console.WriteLine("FIZZ");
-
                 }
                 else if (i % 5 == 0)
                 {
                     Console.WriteLine("BUZZ");
                 }
-
                 else
                 {
                     Console.WriteLine(i);
                 }
             }
         }
-        //////////////////////////////////////////////////////////////////////////////////////
-        //creating a method to reverse a string (9/13-2)
+        //-------------------------------------------------------------------------------------------
+        //create a method to reverse a string (9/13-2)
         public static void ReverseTheString()
         {
             string aString = "test this string";
+            string reversedString = "";
 
             Console.WriteLine("Please enter a string:");
             aString = Console.ReadLine();
 
-            string reversedString = "";
-
+            //method1 - reverse by creating a new string that is concatenated in reverse order
             for (int i = aString.Length - 1; i >= 0; i--)
             {
-                reversedString += aString[i]; //concatenating in reverse order          
-                //alternative - reverse the string in place (switching end and beginning etc to middle)      
+                reversedString += aString[i]; 
             }
             Console.WriteLine("The reversed string is :" + reversedString);
+            
+            //method2 - reverse the string in place
+            //method3 - use .Reverse
+            
         }
-        //creating a method that finds the largest number in the array (9/13-1)
-        public static int LargestNum(int[] numArray) //this method takes in an integer array as input
+        //-------------------------------------------------------------------------------------------
+        //Tech interview question (9/12)
+        //print out all prime numbers that are less than 100 to the console 
+        //0 and 1 are not prime numbers
+        public static void PrimeNumbersXtoY()
         {
-            int biggestNum = numArray[0];  //setting initial value to first of array takes care of problem of negative numbers
-            for (int i = 0; i < numArray.Length; i++)
+            int beginNumber = 2;
+            int endNumber = 100;
+            bool isPrime = true;
+
+            Console.WriteLine("What number would you like to start with?");
+            beginNumber = int.Parse(Console.ReadLine());
+            Console.WriteLine("What number would you like to end with?");
+            endNumber = int.Parse(Console.ReadLine());
+
+
+            for (int i = beginNumber; i <= endNumber; i++) //outer loop
+            { }//end outer loop
+        }//end method
+        
+   //-------------------------------------------------------------------------------------------
+        //create a method that finds the largest number in an integer array (9/13-1)
+        public static void LargestNumInArray()
+        {
+            int[] numArray = { 34, -2, 2, 490, -490, 0 };
+            //set initial value to first value of array 
+            int biggestNum = numArray[0];
+
+            for (int i = 0; i < numArray.Length-1; i++)
             {
                 if (numArray[i] > biggestNum)
                 {
                     biggestNum = numArray[i];
                 }
             }
-            return biggestNum; //remember, the variable biggestNum only exists within this method - 
-            //need to assign a name to what is being returned within the main program (can call it the same thing or not)
+            Console.WriteLine("Largest number in the array is: " +biggestNum);            
         }
 
-        //////////////////////////////////////////////////////////////////////////////////////
+        //-------------------------------------------------------------------------------------------
         public static void IsItAPalindrome()
         {
 
         }
+
+        //-------------------------------------------------------------------------------------------
+
+        //Tech interview question
+        //what is the difference between an Array and a List?
+
+        //-------------------------------------------------------------------------------------------
+        //Tech interview question
+        //difference between reference types and value types
+        //stacks vs heaps
+        //reference types are pointers to data located on the heap
+        //C# does the garbage collection for us - other languauges you have to reallocate space
+
+        //-------------------------------------------------------------------------------------------
+        //Tech interview question
+        //stringbuilder - how does it work?
+
+        //-------------------------------------------------------------------------------------------
+        
         ///////////////////////////////////do not erase curly brackets below this /////////////
     }
 }
