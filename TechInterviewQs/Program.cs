@@ -21,7 +21,7 @@ namespace TechInterviewQs
                 Console.WriteLine("3 - Reverse any string");
                 Console.WriteLine("4 - Prime Numbers x to y");
                 Console.WriteLine("5 - Largest Number in array");
-                Console.WriteLine("6 - Palindrome any string");
+                Console.WriteLine("6 - Palindrome any word");
                 Console.WriteLine("0 - Exit");
 
                 Console.WriteLine("Which program would you like to run?");
@@ -191,6 +191,44 @@ namespace TechInterviewQs
         //-------------------------------------------------------------------------------------------
         public static void IsItAPalindrome()
         {
+            Console.WriteLine("This program checks whether a word is a palindrome.");
+            Console.WriteLine("Please enter a word with no spaces or punctuation.");
+            string startingString = Console.ReadLine();
+            char[] charArrayToCheck = startingString.ToLower().ToCharArray();
+            bool isPalindrome = true;
+           
+            //checks the first letter with the last and moves forward/backward each iteration
+            //this actually goes through the whole word twice...
+            //PROBLEM - need for loops to be separated, not nested!
+            //for (int i=0;i <= charArrayToCheck.Length - 1; i++)
+            //{
+            //    Console.WriteLine(charArrayToCheck[i]);
+            //    for (int j= charArrayToCheck.Length-1; j>= 0;j--)
+            //    {
+            //        Console.WriteLine(charArrayToCheck[j]);
+            //        if (charArrayToCheck[i] != charArrayToCheck[j])
+            //        {
+            //            isPalindrome = false;
+            //            break;
+            //        }                        
+            //    }                
+            //}
+            if(isPalindrome==true)
+            { Console.WriteLine("[0] is a palindrome.",startingString); }
+            else { Console.WriteLine("[0] is NOT a palindrome.",startingString); }
+
+            ////CHECKING STRINGS WITH SPACES AND PUNCTUATIONconvert string to char array
+
+            //char[] charArrayToCheck = startingString.ToLower().ToCharArray();
+
+            //char forward = charArrayToCheck[0];
+            //char backward = charArrayToCheck[charArrayToCheck.Length - 1];
+
+            //for (int i=0; i<=charArrayToCheck.Length - 1;i++)
+            //{
+            //    //check whether the element is a letter
+
+            //}
 
         }
 
@@ -211,7 +249,7 @@ namespace TechInterviewQs
         //stringbuilder - how does it work?
 
         //-------------------------------------------------------------------------------------------
-        
+
         ///////////////////////////////////do not erase curly brackets below this /////////////
     }
 }
