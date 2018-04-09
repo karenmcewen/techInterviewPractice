@@ -10,7 +10,7 @@ namespace TechInterviewQs
     {
         static void Main(string[] args)
         {
-          
+
             //Main Menu
             int menuChoice = 10;
             while (menuChoice > 0)
@@ -93,23 +93,24 @@ namespace TechInterviewQs
         public static void FizzBuzzXtoY()
         {
             bool endGreaterThanStart = false;
-            int startNum=0;
-            int endNum=100;
+            int startNum = 0;
+            int endNum = 100;
 
             while (endGreaterThanStart == false)
             {
-            Console.WriteLine("Please enter a starting number");
+                Console.WriteLine("Please enter a starting number");
                 startNum = int.Parse(Console.ReadLine());
                 Console.WriteLine("Please enter an ending number");
                 endNum = int.Parse(Console.ReadLine());
-             if (endNum <= startNum)
-            { Console.WriteLine("Ending number must be greater than starting number. Please try again."); }
-            else
-             { endGreaterThanStart = true;                
-            }
-           }//end while loop that checks for usable starting and ending numbers
-            
-            for (int i = startNum; i<= endNum; i++)
+                if (endNum <= startNum)
+                { Console.WriteLine("Ending number must be greater than starting number. Please try again."); }
+                else
+                {
+                    endGreaterThanStart = true;
+                }
+            }//end while loop that checks for usable starting and ending numbers
+
+            for (int i = startNum; i <= endNum; i++)
             {
                 if (i % 5 == 0 && i % 3 == 0)
                 {
@@ -142,13 +143,13 @@ namespace TechInterviewQs
             //method1 - reverse by creating a new string that is concatenated in reverse order
             for (int i = aString.Length - 1; i >= 0; i--)
             {
-                reversedString += aString[i]; 
+                reversedString += aString[i];
             }
             Console.WriteLine("The reversed string is :" + reversedString);
-            
+
             //method2 - reverse the string in place
             //method3 - use .Reverse
-            
+
         }
         //-------------------------------------------------------------------------------------------
         //Tech interview question (9/12)
@@ -169,8 +170,8 @@ namespace TechInterviewQs
             for (int i = beginNumber; i <= endNumber; i++) //outer loop
             { }//end outer loop
         }//end method
-        
-   //-------------------------------------------------------------------------------------------
+
+        //-------------------------------------------------------------------------------------------
         //create a method that finds the largest number in an integer array (9/13-1)
         public static void LargestNumInArray()
         {
@@ -178,14 +179,14 @@ namespace TechInterviewQs
             //set initial value to first value of array 
             int biggestNum = numArray[0];
 
-            for (int i = 0; i < numArray.Length-1; i++)
+            for (int i = 0; i < numArray.Length - 1; i++)
             {
                 if (numArray[i] > biggestNum)
                 {
                     biggestNum = numArray[i];
                 }
             }
-            Console.WriteLine("Largest number in the array is: " +biggestNum);            
+            Console.WriteLine("Largest number in the array is: " + biggestNum);
         }
 
         //-------------------------------------------------------------------------------------------
@@ -196,26 +197,22 @@ namespace TechInterviewQs
             string startingString = Console.ReadLine();
             char[] charArrayToCheck = startingString.ToLower().ToCharArray();
             bool isPalindrome = true;
-           
+
             //checks the first letter with the last and moves forward/backward each iteration
-            //this actually goes through the whole word twice...
-            //PROBLEM - need for loops to be separated, not nested!
-            //for (int i=0;i <= charArrayToCheck.Length - 1; i++)
-            //{
-            //    Console.WriteLine(charArrayToCheck[i]);
-            //    for (int j= charArrayToCheck.Length-1; j>= 0;j--)
-            //    {
-            //        Console.WriteLine(charArrayToCheck[j]);
-            //        if (charArrayToCheck[i] != charArrayToCheck[j])
-            //        {
-            //            isPalindrome = false;
-            //            break;
-            //        }                        
-            //    }                
-            //}
-            if(isPalindrome==true)
-            { Console.WriteLine("[0] is a palindrome.",startingString); }
-            else { Console.WriteLine("[0] is NOT a palindrome.",startingString); }
+
+            for (int i = 0; i <= 0.5 * (charArrayToCheck.Length - 1); i++)
+            {
+                Console.WriteLine(charArrayToCheck[i]);
+                Console.WriteLine(charArrayToCheck[charArrayToCheck.Length - 1 - i]);
+                if (charArrayToCheck[i] != charArrayToCheck[charArrayToCheck.Length - 1 - i])
+                {
+                    isPalindrome = false;
+                    break;
+                }
+            }
+            if (isPalindrome == true)
+            { Console.WriteLine(startingString +" is a palindrome."); }
+            else { Console.WriteLine(startingString +" is NOT a palindrome."); }
 
             ////CHECKING STRINGS WITH SPACES AND PUNCTUATIONconvert string to char array
 
