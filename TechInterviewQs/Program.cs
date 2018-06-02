@@ -10,6 +10,7 @@ namespace TechInterviewQs
     {
         static void Main(string[] args)
         {
+            //This is a program for practicing  basic c# coding questions
 
             //Main Menu
             int menuChoice = 10;
@@ -22,6 +23,7 @@ namespace TechInterviewQs
                 Console.WriteLine("4 - Prime Numbers x to y");
                 Console.WriteLine("5 - Largest Number in array");
                 Console.WriteLine("6 - Palindrome any word");
+                Console.WriteLine("7 - Nested For Loops");
                 Console.WriteLine("0 - Exit");
 
                 Console.WriteLine("Which program would you like to run?");
@@ -48,6 +50,9 @@ namespace TechInterviewQs
                         break;
                     case 6:
                         IsItAPalindrome();
+                        break;
+                    case 7:
+                        NestedLoops();
                         break;
                     default:
                         menuChoice = 10;
@@ -228,7 +233,21 @@ namespace TechInterviewQs
             //}
 
         }
+        //-------------------------------------------------------------------------------------------
+public static void NestedLoops()
+        {
+            int i = 0;
+            int j = 0;
 
+            for(i=0;i<=10;i++)
+            {
+                for(j=0;j<=5;j++)
+                {
+                    int k = i * j;
+                    Console.WriteLine("i={0}, j={0}, i*j=,{0}", i, j, k);
+                }
+            }
+        }
         //-------------------------------------------------------------------------------------------
 
         //Tech interview question
