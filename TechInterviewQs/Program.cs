@@ -244,7 +244,7 @@ public static void NestedLoops()
                 for(j=0;j<=5;j++)
                 {
                     int k = i * j;
-                    Console.WriteLine("i={0}, j={0}, i*j=,{0}", i, j, k);
+                    Console.WriteLine("i = "+i+"  j = "+j+"   i*j = "+k);
                 }
             }
         }
